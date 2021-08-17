@@ -1,0 +1,2 @@
+---
+puppet_apache::install_name: 'apache2'
