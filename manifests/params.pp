@@ -1,6 +1,6 @@
 # @summary 
 #   For module variables
-#   case $facts['os']['family'] OR "$::osfamily"
+#   "$facts['os']['family']" OR "$::osfamily"
 class apache::params {
   $install_ensure = 'present'
   case $facts['os']['family'] {
