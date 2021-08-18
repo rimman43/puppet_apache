@@ -1,3 +1,4 @@
 ---
 puppet_apache::install_name: 'apache2'
 puppet_apache::config_path: '/etc/apache2/apache2.conf'
+puppet_apache::service_name: 'apache2'

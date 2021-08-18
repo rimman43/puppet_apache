@@ -1,3 +1,4 @@
 ---
 puppet_apache::install_name: 'httpd'
 puppet_apache::config_path: '/etc/httpd/conf/httpd.conf'
+puppet_apache::service_name: 'httpd'
