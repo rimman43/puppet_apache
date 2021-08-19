@@ -10,16 +10,15 @@ class puppet_apache (
   String $config_path,
   String $config_ensure,
   String $service_name,
-  String $service_ensure,
-  String $service_enable,
-
+  Enum["running", "stopped"] $service_ensure,
+  Boolean $service_enable,
   
 ) {
    contain puppet_apache::install
    contain puppet_apache::config
    contain puppet_apache::service
 
-  Class['::puppet_apache::install']
-  -> Class['::puppet_apache::config']
-  -> Class['::puppet_apache::service']
+  Class['::puppet_apache::install'] 
+  -> Class['::puppet_apache::config'] 
+  ~> Class['::puppet_apache::service']
 }
