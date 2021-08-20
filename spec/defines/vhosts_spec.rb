@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe 'apache::vhosts' do
+describe 'puppet_apache::vhosts' do
   let(:title) { 'namevar' }
   let(:params) do
     {}
