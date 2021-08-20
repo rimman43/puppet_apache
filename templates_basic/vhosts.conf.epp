@@ -1,0 +1,7 @@
+<%# Virtual hosts template -%>
+<VirtualHost *:8090 >
+    ServerAdmin admin@<%= $facts['domain'] %>
+    ServerName <%= $facts['fqdn'] %>
+    ServerAlias vaww.<%= $facts['fqdn'] %>
+    DocumentRoot  <%= $puppet_apache::docroot %>
+</VirtualHost>
