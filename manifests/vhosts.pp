@@ -26,7 +26,7 @@ define puppet_apache::vhosts (
     group   => $puppet_apache::vhosts_group,
     mode    => '0644',
     content => epp('puppet_apache/vhosts.conf.epp', {'port' => $port, 'subdomain' => $subdomain, 'admin' => $admin, 'docroot' => $docroot}),
-    notify  => Service['apache_service'],
+    notify  => Service["${puppet_apache::service_name}"],
   }
 }
 
