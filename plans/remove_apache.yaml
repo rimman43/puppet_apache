@@ -1,0 +1,15 @@
+steps:
+  - task: apache::ctl
+    target: puppetagent1.mylabserver.com
+    description: "Shut down Apache service"
+    parameters:
+      command: graceful-stop
+  - command: "cp /etc/httpd/logs/access_log /tmp/apache_access"
+    target: ellejaclyn2c.mylabserver.com
+    description: "Copy the Apache access logs"
+  - task: package
+    target: puppetagent1.mylabserver.com
+    description: "Remove Apache"
+    parameters:
+      action: uninstall
+      name: httpd
