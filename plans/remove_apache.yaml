@@ -5,7 +5,7 @@ steps:
     parameters:
       command: graceful-stop
   - command: "cp /etc/httpd/logs/access_log /tmp/apache_access"
-    target: ellejaclyn2c.mylabserver.com
+    target: puppetagent1.mylabserver.com
     description: "Copy the Apache access logs"
   - task: package
     target: puppetagent1.mylabserver.com
